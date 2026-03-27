@@ -1,0 +1,91 @@
+<!-- Estudiante: 1152336-2026A | Producto: CodeReview+ | Examen Diagnóstico 2026A -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeReview+</title>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body data-student-token="1152336-2026A">
+
+<header>
+  <nav>
+    <a href="#seccion-hero">Inicio</a>
+    <a href="#seccion-caracteristicas">Características</a>
+    <a href="#seccion-como">Cómo funciona</a>
+    <a href="#seccion-precios">Precios</a>
+    <a href="#seccion-testimonios">Testimonios</a>
+    <a href="#seccion-contacto">Contacto</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section id="seccion-hero">
+  <h1 class="titulo-hero">CodeReview+</h1>
+  <p>Analiza tu código y mejora calidad y seguridad automáticamente</p>
+  <button id="btnHero">Ver precios</button>
+</section>
+
+<!-- CARACTERÍSTICAS -->
+<section id="seccion-caracteristicas">
+  <h2 class="titulo-caracteristicas">Características</h2>
+
+  <div>
+    <button data-filtro="todos">Todas</button>
+    <button data-filtro="core">Core</button>
+    <button data-filtro="integracion">Integración</button>
+    <button data-filtro="seguridad">Seguridad</button>
+  </div>
+
+  <p id="contador"></p>
+
+  <div id="contenedor-caracteristicas"></div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section id="seccion-como">
+  <h2 class="titulo-como">Cómo funciona</h2>
+
+  <div class="paso">1. Conecta tu repositorio</div>
+  <div class="paso">2. Analiza el código</div>
+  <div class="paso">3. Recibe sugerencias</div>
+  <div class="paso">4. Mejora tu proyecto</div>
+</section>
+
+<!-- PRECIOS -->
+<section id="seccion-precios">
+  <h2 class="titulo-precios">Planes</h2>
+  <button id="togglePrecios">Mensual / Anual</button>
+  <div id="contenedor-planes"></div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section id="seccion-testimonios">
+  <h2 class="titulo-testimonios">Testimonios</h2>
+  <div id="carrusel"></div>
+  <button id="prev">Anterior</button>
+  <button id="next">Siguiente</button>
+</section>
+
+<!-- CONTACTO -->
+<section id="seccion-contacto">
+  <h2 class="titulo-contacto">Contacto</h2>
+
+  <form id="formulario">
+    <input type="text" id="nombre" placeholder="Nombre completo">
+    <input type="email" id="correo" placeholder="Correo">
+    <input type="text" id="asunto" placeholder="Asunto">
+    <textarea id="mensaje" placeholder="Mensaje"></textarea>
+    <button type="submit">Enviar</button>
+  </form>
+</section>
+
+<footer>
+  <p id="footer-texto"></p>
+</footer>
+
+<script src="scripts/app.js"></script>
+</body>
+</html>
