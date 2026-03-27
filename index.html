@@ -1,91 +1,333 @@
+<!-- index.html -->
 <!-- Estudiante: 1152336-2026A | Producto: CodeReview+ | Examen Diagnóstico 2026A -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CodeReview+</title>
-  <link rel="stylesheet" href="styles/main.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CodeReview+ | Calidad de código sin esfuerzo</title>
+  <link rel="stylesheet" href="styles/main.css" />
+  
 </head>
+<body data-student="1152336-2026A" data-theme="light">
 
-<body data-student-token="1152336-2026A">
-
-<header>
-  <nav>
-    <a href="#seccion-hero">Inicio</a>
-    <a href="#seccion-caracteristicas">Características</a>
-    <a href="#seccion-como">Cómo funciona</a>
-    <a href="#seccion-precios">Precios</a>
-    <a href="#seccion-testimonios">Testimonios</a>
-    <a href="#seccion-contacto">Contacto</a>
+  <!-- ===== NAVEGACIÓN ===== -->
+  <nav id="navbar">
+    <div class="nav-logo">CodeReview<span>+</span></div>
+    <ul class="nav-links">
+      <li><a href="#seccion-hero">Inicio</a></li>
+      <li><a href="#seccion-caracteristicas">Características</a></li>
+      <li><a href="#seccion-como-funciona">Cómo funciona</a></li>
+      <li><a href="#seccion-precios">Precios</a></li>
+      <li><a href="#seccion-testimonios">Testimonios</a></li>
+      <li><a href="#seccion-contacto">Contacto</a></li>
+    </ul>
+    <button id="btn-tema" aria-label="Cambiar tema">☀︎</button>
   </nav>
-</header>
 
-<!-- HERO -->
-<section id="seccion-hero">
-  <h1 class="titulo-hero">CodeReview+</h1>
-  <p>Analiza tu código y mejora calidad y seguridad automáticamente</p>
-  <button id="btnHero">Ver precios</button>
-</section>
+  <!-- ===== 5.1 HERO ===== -->
+  <section id="seccion-hero">
+    <div class="hero-contenido">
+      <h1 class="titulo-hero">CodeReview<span>+</span></h1>
+      <p class="eslogan-hero">
+        Analiza repositorios Git al instante.<br />Código más seguro, equipos más fuertes.
+      </p>
+      <a href="#seccion-precios" class="btn-hero">Ver planes →</a>
+      <p id="saludo-dinamico" class="saludo"></p>
+    </div>
+    <div class="hero-imagen">
+      <img src="img/hero.jfif" alt="Ilustración CodeReview+" />
+    </div>
+  </section>
 
-<!-- CARACTERÍSTICAS -->
-<section id="seccion-caracteristicas">
-  <h2 class="titulo-caracteristicas">Características</h2>
+  <!-- ===== 5.2 CARACTERÍSTICAS ===== -->
+  <section id="seccion-caracteristicas">
+    <h2 class="titulo-caracteristicas">Características</h2>
+    <div class="filtros">
+      <button class="btn-filtro activo" data-filtro="todas">Todas</button>
+      <button class="btn-filtro" data-filtro="core">Core</button>
+      <button class="btn-filtro" data-filtro="integracion">Integración</button>
+      <button class="btn-filtro" data-filtro="seguridad">Seguridad</button>
+    </div>
+    <p class="contador-tarjetas">Mostrando <span id="contador">6</span> de 6 características</p>
+    <div class="grid-caracteristicas">
 
-  <div>
-    <button data-filtro="todos">Todas</button>
-    <button data-filtro="core">Core</button>
-    <button data-filtro="integracion">Integración</button>
-    <button data-filtro="seguridad">Seguridad</button>
-  </div>
+      <div class="tarjeta-caracteristica" data-categoria="core">
+        <div class="tarjeta-icono">⚙️</div>
+        <h3>Análisis estático</h3>
+        <p>Detecta errores de sintaxis, variables no usadas y antipatrones automáticamente. Integrado en tu flujo de trabajo sin configuración adicional.</p>
+      </div>
 
-  <p id="contador"></p>
+      <div class="tarjeta-caracteristica" data-categoria="seguridad">
+        <div class="tarjeta-icono">🔒</div>
+        <h3>Detección de vulnerabilidades</h3>
+        <p>Identifica inyecciones SQL, XSS, credenciales expuestas y dependencias con CVEs conocidos. Alertas en tiempo real antes del merge.</p>
+      </div>
 
-  <div id="contenedor-caracteristicas"></div>
-</section>
+      <div class="tarjeta-caracteristica" data-categoria="integracion">
+        <div class="tarjeta-icono">🔗</div>
+        <h3>GitHub & GitLab</h3>
+        <p>Conecta tus repos con un clic. Comenta directamente en los pull requests con sugerencias de mejora contextualizadas por IA.</p>
+      </div>
 
-<!-- COMO FUNCIONA -->
-<section id="seccion-como">
-  <h2 class="titulo-como">Cómo funciona</h2>
+      <div class="tarjeta-caracteristica" data-categoria="core">
+        <div class="tarjeta-icono">📊</div>
+        <h3>Métricas de calidad</h3>
+        <p>Panel de métricas: complejidad ciclomática, deuda técnica y cobertura. Histórico visual para rastrear la evolución del proyecto.</p>
+      </div>
 
-  <div class="paso">1. Conecta tu repositorio</div>
-  <div class="paso">2. Analiza el código</div>
-  <div class="paso">3. Recibe sugerencias</div>
-  <div class="paso">4. Mejora tu proyecto</div>
-</section>
+      <div class="tarjeta-caracteristica" data-categoria="integracion">
+        <div class="tarjeta-icono">🤖</div>
+        <h3>Revisión IA</h3>
+        <p>Sugerencias inteligentes basadas en mejores prácticas de la industria. Aprende de tu codebase para dar feedback personalizado al equipo.</p>
+      </div>
 
-<!-- PRECIOS -->
-<section id="seccion-precios">
-  <h2 class="titulo-precios">Planes</h2>
-  <button id="togglePrecios">Mensual / Anual</button>
-  <div id="contenedor-planes"></div>
-</section>
+      <div class="tarjeta-caracteristica" data-categoria="seguridad">
+        <div class="tarjeta-icono">🛡️</div>
+        <h3>Auditoría de dependencias</h3>
+        <p>Escanea automáticamente package.json, requirements.txt y Gemfile. Notifica actualizaciones críticas y genera reportes de cumplimiento.</p>
+      </div>
 
-<!-- TESTIMONIOS -->
-<section id="seccion-testimonios">
-  <h2 class="titulo-testimonios">Testimonios</h2>
-  <div id="carrusel"></div>
-  <button id="prev">Anterior</button>
-  <button id="next">Siguiente</button>
-</section>
+    </div>
+  </section>
 
-<!-- CONTACTO -->
-<section id="seccion-contacto">
-  <h2 class="titulo-contacto">Contacto</h2>
+  <!-- ===== 5.3 CÓMO FUNCIONA ===== -->
+  <section id="seccion-como-funciona">
+    <h2 class="titulo-como-funciona">Cómo funciona</h2>
+    <div class="pasos-contenedor">
 
-  <form id="formulario">
-    <input type="text" id="nombre" placeholder="Nombre completo">
-    <input type="email" id="correo" placeholder="Correo">
-    <input type="text" id="asunto" placeholder="Asunto">
-    <textarea id="mensaje" placeholder="Mensaje"></textarea>
-    <button type="submit">Enviar</button>
-  </form>
-</section>
+      <div class="paso" id="paso-1">
+        <div class="paso-numero" data-paso="1">01</div>
+        <div class="paso-info">
+          <h3 class="paso-titulo">Conecta tu repositorio</h3>
+          <p>Autoriza CodeReview+ en GitHub, GitLab o Bitbucket. La integración tarda menos de 2 minutos y no requiere instalar agentes locales.</p>
+          <div class="paso-detalle">
+            <p>Soportamos repositorios públicos y privados. Todos los datos se transmiten cifrados con TLS 1.3 y nunca almacenamos tu código fuente.</p>
+          </div>
+        </div>
+        <div class="paso-conector">→</div>
+      </div>
 
-<footer>
-  <p id="footer-texto"></p>
-</footer>
+      <div class="paso" id="paso-2">
+        <div class="paso-numero" data-paso="2">02</div>
+        <div class="paso-info">
+          <h3 class="paso-titulo">Configura tus reglas</h3>
+          <p>Elige entre más de 500 reglas predefinidas o crea las tuyas. Agrupa por severidad: crítico, advertencia o informativo.</p>
+          <div class="paso-detalle">
+            <p>Importa configuraciones de ESLint, SonarQube o nuestras plantillas por industria. Compatible con proyectos Node, Python, Java, Go y más.</p>
+          </div>
+        </div>
+        <div class="paso-conector">→</div>
+      </div>
 
-<script src="scripts/app.js"></script>
+      <div class="paso" id="paso-3">
+        <div class="paso-numero" data-paso="3">03</div>
+        <div class="paso-info">
+          <h3 class="paso-titulo">Recibe el análisis</h3>
+          <p>Cada push o pull request activa un escaneo completo. Los resultados aparecen directamente en la interfaz del repositorio en segundos.</p>
+          <div class="paso-detalle">
+            <p>Notificaciones por Slack, email o webhooks. El panel centraliza todos los hallazgos con filtros por archivo, autor o fecha.</p>
+          </div>
+        </div>
+        <div class="paso-conector">→</div>
+      </div>
+
+      <div class="paso" id="paso-4">
+        <div class="paso-numero" data-paso="4">04</div>
+        <div class="paso-info">
+          <h3 class="paso-titulo">Mejora continuamente</h3>
+          <p>Aplica las sugerencias con un clic o delégalas al equipo. Rastrea la reducción de deuda técnica sprint a sprint con reportes automáticos.</p>
+          <div class="paso-detalle">
+            <p>El motor de IA aprende de las correcciones aceptadas y rechazadas para afinar sus recomendaciones específicamente a tu proyecto.</p>
+          </div>
+        </div>
+        <div class="paso-conector"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== 5.4 PRECIOS ===== -->
+  <section id="seccion-precios">
+    <h2 class="titulo-precios">Planes y precios</h2>
+    <div class="toggle-precios">
+      <span>Mensual</span>
+      <label class="switch">
+        <input type="checkbox" id="toggle-anual" />
+        <span class="slider-toggle"></span>
+      </label>
+      <span>Anual <em>-20%</em></span>
+    </div>
+    <div class="grid-precios">
+
+      <div class="tarjeta-precio" id="plan-gratuito">
+        <h3>Gratuito</h3>
+        <div class="precio">
+          <span class="monto" data-mensual="0" data-anual="0">$0</span>
+          <span class="periodo">/mes</span>
+        </div>
+        <ul class="beneficios">
+          <li>✓ 1 repositorio activo</li>
+          <li>✓ 50 análisis/mes</li>
+          <li>✓ Reglas básicas (100+)</li>
+          <li>✓ Historial 7 días</li>
+          <li>✓ Soporte por comunidad</li>
+        </ul>
+        <button class="btn-plan" data-plan="Gratuito">Comenzar gratis</button>
+      </div>
+
+      <div class="tarjeta-precio destacado" id="plan-pro">
+        <div class="badge-recomendado">Recomendado</div>
+        <h3>Pro</h3>
+        <div class="precio">
+          <span class="monto" data-mensual="29" data-anual="23">$29</span>
+          <span class="periodo">/mes</span>
+        </div>
+        <ul class="beneficios">
+          <li>✓ 10 repositorios activos</li>
+          <li>✓ Análisis ilimitados</li>
+          <li>✓ Reglas avanzadas (500+)</li>
+          <li>✓ Revisión IA incluida</li>
+          <li>✓ Historial 90 días</li>
+        </ul>
+        <button class="btn-plan" data-plan="Pro">Elegir Pro</button>
+      </div>
+
+      <div class="tarjeta-precio" id="plan-empresarial">
+        <h3>Empresarial</h3>
+        <div class="precio">
+          <span class="monto" data-mensual="99" data-anual="79">$99</span>
+          <span class="periodo">/mes</span>
+        </div>
+        <ul class="beneficios">
+          <li>✓ Repositorios ilimitados</li>
+          <li>✓ SSO y SAML</li>
+          <li>✓ Auditoría de cumplimiento</li>
+          <li>✓ SLA 99.9% garantizado</li>
+          <li>✓ Soporte dedicado 24/7</li>
+        </ul>
+        <button class="btn-plan" data-plan="Empresarial">Contactar ventas</button>
+      </div>
+
+    </div>
+    <div id="mensaje-plan" class="mensaje-plan oculto"></div>
+  </section>
+
+  <!-- ===== 5.5 TESTIMONIOS ===== -->
+  <section id="seccion-testimonios">
+    <h2 class="titulo-testimonios">Lo que dicen nuestros usuarios</h2>
+    <div class="carrusel-contenedor">
+      <div class="carrusel-track">
+
+        <div class="testimonio activo">
+          <div class="estrellas">★★★★★</div>
+          <p>"CodeReview+ transformó por completo la cultura de calidad en nuestro equipo. Antes tardábamos días en revisar PRs; ahora el análisis automático elimina el 80% de los comentarios repetitivos y los desarrolladores pueden enfocarse en lo que importa: la lógica de negocio."</p>
+          <div class="testimonio-autor">
+            <strong>Valentina Ríos</strong>
+            <span>Tech Lead — Finova S.A.S</span>
+          </div>
+        </div>
+
+        <div class="testimonio">
+          <div class="estrellas">★★★★★</div>
+          <p>"Detectó una inyección SQL crítica en producción que habíamos pasado por alto en tres revisiones manuales. A partir de ese día, ningún PR entra a main sin pasar por CodeReview+. Es indispensable para cualquier equipo serio en seguridad."</p>
+          <div class="testimonio-autor">
+            <strong>Carlos Mendoza</strong>
+            <span>CTO — DataShield Colombia</span>
+          </div>
+        </div>
+
+        <div class="testimonio">
+          <div class="estrellas">★★★★☆</div>
+          <p>"La integración con GitLab fue instantánea. El tablero de métricas nos ayudó a reducir la deuda técnica un 40% en dos sprints. Las sugerencias de la IA son precisas y el equipo junior las usa como material de aprendizaje continuo."</p>
+          <div class="testimonio-autor">
+            <strong>Sofía Castellanos</strong>
+            <span>Engineering Manager — Logística Andina</span>
+          </div>
+        </div>
+
+        <div class="testimonio">
+          <div class="estrellas">★★★★★</div>
+          <p>"Pasamos de tener 200 vulnerabilidades abiertas a cero en menos de un mes. El escaneo de dependencias es brutalmente eficaz. Cumplir con las auditorías de seguridad ahora es un proceso sin fricciones gracias a los reportes automáticos."</p>
+          <div class="testimonio-autor">
+            <strong>Andrés Forero</strong>
+            <span>DevSecOps Lead — BancaNet</span>
+          </div>
+        </div>
+
+        <div class="testimonio">
+          <div class="estrellas">★★★★★</div>
+          <p>"Como startup pequeña no podíamos pagar un equipo de QA dedicado. CodeReview+ nos da esa tranquilidad por una fracción del costo. La complejidad ciclomática que calcula nos salvó de varios refactors urgentes antes de lanzar a producción."</p>
+          <div class="testimonio-autor">
+            <strong>Manuela Ortiz</strong>
+            <span>Fundadora & CEO — Nuvelo Tech</span>
+          </div>
+        </div>
+
+      </div>
+      <div class="carrusel-controles">
+        <button id="btn-anterior" aria-label="Anterior">‹</button>
+        <div class="indicadores" id="indicadores"></div>
+        <button id="btn-siguiente" aria-label="Siguiente">›</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 5.6 CONTACTO ===== -->
+  <section id="seccion-contacto">
+    <h2 class="titulo-contacto">Contáctanos</h2>
+    <div class="contacto-contenedor">
+      <div id="formulario-contacto">
+        <div class="campo">
+          <label for="nombre">Nombre completo</label>
+          <input type="text" id="nombre" placeholder="Tu nombre" autocomplete="off" />
+          <span class="error-campo" id="error-nombre"></span>
+        </div>
+        <div class="campo">
+          <label for="correo">Correo electrónico</label>
+          <input type="text" id="correo" placeholder="tu@correo.com" autocomplete="off" />
+          <span class="error-campo" id="error-correo"></span>
+        </div>
+        <div class="campo">
+          <label for="asunto">Asunto</label>
+          <input type="text" id="asunto" placeholder="Asunto del mensaje" autocomplete="off" />
+          <span class="error-campo" id="error-asunto"></span>
+        </div>
+        <div class="campo">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" placeholder="Escribe tu mensaje aquí..." rows="5"></textarea>
+          <span class="error-campo" id="error-mensaje"></span>
+        </div>
+        <button id="btn-enviar">Enviar mensaje</button>
+        <div id="confirmacion-envio" class="oculto"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer id="footer">
+    <div class="footer-contenido">
+      <div class="footer-marca">
+        <span class="footer-logo">CodeReview<strong>+</strong></span>
+        <p>© <span id="anio-footer"></span> DevCraft Labs S.A.S. Todos los derechos reservados.</p>
+      </div>
+      <nav class="footer-nav">
+        <a href="#seccion-hero">Inicio</a>
+        <a href="#seccion-caracteristicas">Características</a>
+        <a href="#seccion-como-funciona">Cómo funciona</a>
+        <a href="#seccion-precios">Precios</a>
+        <a href="#seccion-testimonios">Testimonios</a>
+        <a href="#seccion-contacto">Contacto</a>
+      </nav>
+      <div class="footer-redes">
+        <a href="#">GitHub</a>
+        <a href="#">Twitter</a>
+        <a href="#">LinkedIn</a>
+        <button id="btn-top">↑ Inicio</button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts/app.js"></script>
 </body>
 </html>
